@@ -15,7 +15,7 @@ digital simples, acessível e de fácil uso.
 
 - **Dicionário visual**: busca em tempo real e filtro por categoria entre os
   sinais cadastrados, cada um com descrição resumida do movimento.
-- **Vídeo do sinal**: a maioria dos sinais tem um vídeo real, do Dicionário
+- **Vídeo do sinal**: cada sinal cadastrado tem um vídeo real, do Dicionário
   de Libras do INES, exibido na página de detalhes.
 - **Detalhes do sinal**: página individual com descrição ampliada do
   movimento e opção de favoritar.
@@ -101,10 +101,12 @@ sinal aponta diretamente para o arquivo hospedado no site do INES, e é
 exibido na página de detalhes (componente
 [`SignVideo`](src/components/SignVideo.tsx)) com um crédito visível à fonte.
 
-Nem toda palavra tem correspondência no acervo do INES. Quando um sinal não
-tem `videoUrl` definido (como "Bom dia" e "Boa noite", que o dicionário não
-lista como expressão composta), a interface usa a ilustração de categoria
-gerada em tela como alternativa, com o texto "Imagem demonstrativa".
+Nem toda palavra tem correspondência no acervo do INES — em geral, ele lista
+palavras isoladas, não expressões compostas (por exemplo, não há um vídeo
+único para a saudação "bom dia"). Por isso os 26 sinais cadastrados foram
+escolhidos entre os que têm vídeo disponível. Ao adicionar um novo sinal sem
+`videoUrl`, a interface usa a ilustração de categoria gerada em tela como
+alternativa, com o texto "Imagem demonstrativa".
 
 Para adicionar o vídeo de um novo sinal, procure a palavra no dicionário do
 INES, copie o endereço do arquivo `.mp4` reproduzido na página e use-o como

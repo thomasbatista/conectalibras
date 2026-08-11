@@ -22,19 +22,21 @@ export const signs: Sign[] = [
   },
   {
     id: 2,
-    word: "Bom dia",
+    word: "Até logo",
     category: "Saudações",
-    image: "/images/signs/bom-dia.gif",
+    image: "/images/signs/ate-logo.gif",
+    videoUrl: `${INES_VIDEOS}ate%20logoSm_Prog001.mp4`,
     description:
-      "As duas mãos em formato de concha se encontram na altura do peito e sobem levemente, imitando o nascer do sol.",
+      "As duas mãos abertas se movem da altura do rosto para frente, em um gesto breve de despedida.",
   },
   {
     id: 3,
-    word: "Boa noite",
+    word: "Bem-vindo",
     category: "Saudações",
-    image: "/images/signs/boa-noite.gif",
+    image: "/images/signs/bem-vindo.gif",
+    videoUrl: `${INES_VIDEOS}bem_vindoSm_Prog001.mp4`,
     description:
-      "Uma mão passa por cima da outra, encobrindo-a, representando o sol se pondo no horizonte.",
+      "As duas mãos abertas partem do centro do corpo e se abrem para os lados, em um gesto de acolhimento.",
   },
   {
     id: 4,
