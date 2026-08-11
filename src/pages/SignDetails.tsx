@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { signs } from "../data/signs";
-import SignPlaceholder from "../components/SignPlaceholder";
+import SignVideo from "../components/SignVideo";
 import FavoriteButton from "../components/FavoriteButton";
 import { useFavorites } from "../hooks/useFavorites";
 
@@ -42,7 +42,7 @@ export default function SignDetails() {
       </Link>
 
       <div className="mt-4 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-        <SignPlaceholder word={sign.word} size="lg" />
+        <SignVideo word={sign.word} videoUrl={sign.videoUrl} />
 
         <div className="p-6">
           <span className="w-fit rounded-full bg-brand-50 px-2.5 py-0.5 text-xs font-medium text-brand-700">

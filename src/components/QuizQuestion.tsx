@@ -1,5 +1,6 @@
 import type { QuizQuestion as QuizQuestionType } from "../types/quiz";
 import SignPlaceholder from "./SignPlaceholder";
+import SignVideo from "./SignVideo";
 
 interface QuizQuestionProps {
   question: QuizQuestionType;
@@ -21,8 +22,17 @@ export default function QuizQuestion({
         Qual palavra corresponde a este sinal?
       </h2>
 
-      <div className="mx-auto mb-6 max-w-xs overflow-hidden rounded-xl">
-        <SignPlaceholder word={question.sign.word} size="lg" />
+      <div className="mx-auto mb-6 max-w-xs overflow-hidden rounded-xl border border-slate-100">
+        {question.sign.videoUrl ? (
+          <SignVideo word={question.sign.word} videoUrl={question.sign.videoUrl} />
+        ) : (
+          <>
+            <SignPlaceholder word={question.sign.word} size="lg" />
+            <p className="bg-slate-50 p-4 text-center text-sm italic text-slate-700">
+              “{question.sign.description}”
+            </p>
+          </>
+        )}
       </div>
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2" role="radiogroup" aria-label="Alternativas">

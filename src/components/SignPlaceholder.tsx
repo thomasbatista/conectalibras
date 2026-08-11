@@ -1,11 +1,13 @@
 interface SignPlaceholderProps {
   word: string;
   size?: "sm" | "lg";
+  hasVideo?: boolean;
 }
 
 export default function SignPlaceholder({
   word,
   size = "sm",
+  hasVideo = false,
 }: SignPlaceholderProps) {
   const heightClass = size === "lg" ? "h-64 sm:h-80" : "h-40";
   const iconSizeClass = size === "lg" ? "h-20 w-20" : "h-12 w-12";
@@ -14,8 +16,21 @@ export default function SignPlaceholder({
     <div
       role="img"
       aria-label={`Ilustração demonstrativa do sinal para ${word}`}
-      className={`flex ${heightClass} w-full flex-col items-center justify-center gap-2 rounded-t-xl bg-gradient-to-br from-brand-100 to-brand-200 text-brand-700`}
+      className={`relative flex ${heightClass} w-full flex-col items-center justify-center gap-2 rounded-t-xl bg-gradient-to-br from-brand-100 to-brand-200 text-brand-700`}
     >
+      {hasVideo && (
+        <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2 py-1 text-xs font-medium text-brand-700 shadow-sm">
+          <svg
+            viewBox="0 0 24 24"
+            className="h-3.5 w-3.5"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path d="M8 5v14l11-7z" />
+          </svg>
+          Vídeo
+        </span>
+      )}
       <svg
         viewBox="0 0 64 64"
         className={iconSizeClass}

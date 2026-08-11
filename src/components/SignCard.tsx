@@ -16,7 +16,7 @@ export default function SignCard({
 }: SignCardProps) {
   return (
     <article className="flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md">
-      <SignPlaceholder word={sign.word} />
+      <SignPlaceholder word={sign.word} hasVideo={Boolean(sign.videoUrl)} />
       <div className="flex flex-1 flex-col gap-2 p-4">
         <span className="w-fit rounded-full bg-brand-50 px-2.5 py-0.5 text-xs font-medium text-brand-700">
           {sign.category}
