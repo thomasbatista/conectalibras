@@ -3,12 +3,20 @@ import type { Sign } from "../types/sign";
 // Descrições em linguagem simplificada, com fins didáticos. Para o sinal
 // oficial e suas variações regionais, consulte sempre um dicionário de
 // LIBRAS reconhecido ou um instrutor surdo qualificado.
+//
+// Os vídeos apontam para o Dicionário de Libras do INES (Instituto Nacional
+// de Educação de Surdos), em dicionario.ines.gov.br. Nem toda palavra tem
+// correspondência exata nesse acervo — quando ausente, a interface usa a
+// ilustração de categoria como alternativa.
+const INES_VIDEOS = "https://dicionario.ines.gov.br/public/media/palavras/videos/";
+
 export const signs: Sign[] = [
   {
     id: 1,
     word: "Olá",
     category: "Saudações",
     image: "/images/signs/ola.gif",
+    videoUrl: `${INES_VIDEOS}olaSm_Prog001.mp4`,
     description:
       "Mão aberta próxima à testa, com um leve movimento para frente, como uma continência descontraída.",
   },
@@ -33,6 +41,7 @@ export const signs: Sign[] = [
     word: "Tchau",
     category: "Saudações",
     image: "/images/signs/tchau.gif",
+    videoUrl: `${INES_VIDEOS}tchauSm_Prog001.mp4`,
     description:
       "Mão aberta próxima ao rosto, com os dedos se abrindo e fechando suavemente, como um aceno.",
   },
@@ -41,6 +50,7 @@ export const signs: Sign[] = [
     word: "Obrigado",
     category: "Expressões",
     image: "/images/signs/obrigado.gif",
+    videoUrl: `${INES_VIDEOS}obrigado1Sm_Prog001.mp4`,
     description:
       "Mão espalmada toca o queixo e se move para frente e para baixo, em direção à pessoa a quem se agradece.",
   },
@@ -49,6 +59,7 @@ export const signs: Sign[] = [
     word: "Sim",
     category: "Expressões",
     image: "/images/signs/sim.gif",
+    videoUrl: `${INES_VIDEOS}simSm_Prog001.mp4`,
     description:
       "Mão fechada, com o polegar visível, realiza um movimento de cima para baixo, semelhante a um aceno de cabeça.",
   },
@@ -57,6 +68,7 @@ export const signs: Sign[] = [
     word: "Não",
     category: "Expressões",
     image: "/images/signs/nao.gif",
+    videoUrl: `${INES_VIDEOS}nao1Sm_Prog001.mp4`,
     description:
       "Dedos indicador e médio se juntam ao polegar em um movimento curto de abrir e fechar, à frente do corpo.",
   },
@@ -65,6 +77,7 @@ export const signs: Sign[] = [
     word: "Amor",
     category: "Expressões",
     image: "/images/signs/amor.gif",
+    videoUrl: `${INES_VIDEOS}amor1Sm_Prog001.mp4`,
     description:
       "Os braços se cruzam sobre o peito, com as mãos fechadas, em um gesto que lembra um abraço em si mesmo.",
   },
@@ -73,6 +86,7 @@ export const signs: Sign[] = [
     word: "Família",
     category: "Família",
     image: "/images/signs/familia.gif",
+    videoUrl: `${INES_VIDEOS}familiaSm_Prog001.mp4`,
     description:
       "As duas mãos em formato de \"F\" se tocam pelos polegares e giram lado a lado, descrevendo um círculo.",
   },
@@ -81,6 +95,7 @@ export const signs: Sign[] = [
     word: "Amigo",
     category: "Família",
     image: "/images/signs/amigo.gif",
+    videoUrl: `${INES_VIDEOS}amigoSm_Prog001.mp4`,
     description:
       "Os dedos indicadores das duas mãos se engancham e trocam de posição, representando uma união.",
   },
@@ -89,6 +104,7 @@ export const signs: Sign[] = [
     word: "Mãe",
     category: "Família",
     image: "/images/signs/mae.gif",
+    videoUrl: `${INES_VIDEOS}mamae1Sm_Prog001.mp4`,
     description:
       "Mão aberta com o polegar tocando o queixo, seguido de um leve movimento para baixo.",
   },
@@ -97,6 +113,7 @@ export const signs: Sign[] = [
     word: "Pai",
     category: "Família",
     image: "/images/signs/pai.gif",
+    videoUrl: `${INES_VIDEOS}pai2Sm_Prog001.mp4`,
     description:
       "Mão aberta com o polegar tocando a testa, seguido de um leve movimento para baixo.",
   },
@@ -105,6 +122,7 @@ export const signs: Sign[] = [
     word: "Escola",
     category: "Escola",
     image: "/images/signs/escola.gif",
+    videoUrl: `${INES_VIDEOS}escolaSm_Prog001.mp4`,
     description:
       "As duas mãos batem palmas suavemente duas vezes, representando o chamado para a sala de aula.",
   },
@@ -113,6 +131,7 @@ export const signs: Sign[] = [
     word: "Professor",
     category: "Escola",
     image: "/images/signs/professor.gif",
+    videoUrl: `${INES_VIDEOS}professorSm_Prog001.mp4`,
     description:
       "As duas mãos partem da testa e se abrem para frente, como se estivessem transmitindo conhecimento.",
   },
@@ -121,6 +140,7 @@ export const signs: Sign[] = [
     word: "Aluno",
     category: "Escola",
     image: "/images/signs/aluno.gif",
+    videoUrl: `${INES_VIDEOS}aluno1Sm_Prog001.mp4`,
     description:
       "As duas mãos partem da testa e se fecham em direção ao corpo, como se estivessem recebendo conhecimento.",
   },
@@ -129,6 +149,7 @@ export const signs: Sign[] = [
     word: "Livro",
     category: "Escola",
     image: "/images/signs/livro.gif",
+    videoUrl: `${INES_VIDEOS}livroSm_Prog001.mp4`,
     description:
       "As duas mãos espalmadas se encostam pelas palmas e se abrem como as páginas de um livro.",
   },
@@ -137,6 +158,7 @@ export const signs: Sign[] = [
     word: "Água",
     category: "Alimentos",
     image: "/images/signs/agua.gif",
+    videoUrl: `${INES_VIDEOS}aguaSm_Prog001.mp4`,
     description:
       "A letra \"A\" em LIBRAS toca o queixo repetidamente, indicando o ato de beber.",
   },
@@ -145,6 +167,7 @@ export const signs: Sign[] = [
     word: "Comida",
     category: "Alimentos",
     image: "/images/signs/comida.gif",
+    videoUrl: `${INES_VIDEOS}comidaSm_Prog001.mp4`,
     description:
       "Os dedos em formato de pinça tocam a boca repetidamente, representando o ato de comer.",
   },
@@ -153,6 +176,7 @@ export const signs: Sign[] = [
     word: "Pão",
     category: "Alimentos",
     image: "/images/signs/pao.gif",
+    videoUrl: `${INES_VIDEOS}paoSm_Prog001.mp4`,
     description:
       "Uma mão em formato de lâmina desliza sobre o dorso da outra mão, como se fatiasse um pão.",
   },
@@ -161,6 +185,7 @@ export const signs: Sign[] = [
     word: "Fruta",
     category: "Alimentos",
     image: "/images/signs/fruta.gif",
+    videoUrl: `${INES_VIDEOS}frutaSm_Prog001.mp4`,
     description:
       "Os dedos em formato de pinça giram levemente próximos à bochecha, indicando algo doce.",
   },
@@ -169,6 +194,7 @@ export const signs: Sign[] = [
     word: "Um",
     category: "Números",
     image: "/images/signs/um.gif",
+    videoUrl: `${INES_VIDEOS}um1Sm_Prog001.mp4`,
     description:
       "Mão fechada com o dedo indicador estendido para cima, parada à frente do corpo.",
   },
@@ -177,6 +203,7 @@ export const signs: Sign[] = [
     word: "Dois",
     category: "Números",
     image: "/images/signs/dois.gif",
+    videoUrl: `${INES_VIDEOS}dois1Sm_Prog001.mp4`,
     description:
       "Mão fechada com os dedos indicador e médio estendidos, formando um \"V\".",
   },
@@ -185,6 +212,7 @@ export const signs: Sign[] = [
     word: "Três",
     category: "Números",
     image: "/images/signs/tres.gif",
+    videoUrl: `${INES_VIDEOS}tres1Sm_Prog001.mp4`,
     description:
       "Mão fechada com o polegar, indicador e médio estendidos, parada à frente do corpo.",
   },
@@ -193,6 +221,7 @@ export const signs: Sign[] = [
     word: "Vermelho",
     category: "Cores",
     image: "/images/signs/vermelho.gif",
+    videoUrl: `${INES_VIDEOS}vermelhoSm_Prog001.mp4`,
     description:
       "O dedo indicador toca o lábio inferior e desliza para baixo, uma ou duas vezes.",
   },
@@ -201,6 +230,7 @@ export const signs: Sign[] = [
     word: "Azul",
     category: "Cores",
     image: "/images/signs/azul.gif",
+    videoUrl: `${INES_VIDEOS}azulSm_Prog001.mp4`,
     description:
       "A letra \"A\" em LIBRAS balança levemente de um lado para o outro, à altura do ombro.",
   },
@@ -209,6 +239,7 @@ export const signs: Sign[] = [
     word: "Verde",
     category: "Cores",
     image: "/images/signs/verde.gif",
+    videoUrl: `${INES_VIDEOS}verdeSm_Prog001.mp4`,
     description:
       "A letra \"V\" em LIBRAS gira levemente sobre o próprio eixo, à altura do peito.",
   },
