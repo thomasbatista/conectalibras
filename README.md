@@ -15,6 +15,8 @@ digital simples, acessível e de fácil uso.
 
 - **Dicionário visual**: busca em tempo real e filtro por categoria entre os
   sinais cadastrados, cada um com descrição resumida do movimento.
+- **Vídeo do sinal**: a maioria dos sinais tem um vídeo real, do Dicionário
+  de Libras do INES, exibido na página de detalhes.
 - **Detalhes do sinal**: página individual com descrição ampliada do
   movimento e opção de favoritar.
 - **Favoritos**: marcação de sinais para consulta rápida, salva no navegador.
@@ -78,26 +80,35 @@ Para adicionar um novo, inclua um objeto seguindo a interface `Sign`
   word: "Exemplo",
   category: "Saudações",
   image: "/images/signs/exemplo.gif",
+  videoUrl: "https://dicionario.ines.gov.br/public/media/palavras/videos/exemploSm_Prog001.mp4",
   description: "Descrição resumida do movimento do sinal.",
 }
 ```
 
 O `id` deve ser único e a `category` precisa ser uma das categorias já
-definidas em `CATEGORIES`. O sinal aparece automaticamente no dicionário e
-passa a fazer parte do banco de perguntas do quiz.
+definidas em `CATEGORIES`. O campo `videoUrl` é opcional: quando não
+informado, a interface usa automaticamente a ilustração de categoria como
+alternativa (veja a seção seguinte). O sinal aparece automaticamente no
+dicionário e passa a fazer parte do banco de perguntas do quiz.
 
-## Como substituir as imagens demonstrativas por GIFs reais
+## Vídeos dos sinais
 
-Atualmente cada sinal é representado por uma ilustração gerada em tela
-(ícone + texto "Imagem demonstrativa"), já que ainda não há um acervo de
-GIFs cadastrado. Para usar imagens reais:
+A demonstração de cada sinal é feita por um vídeo real do
+[Dicionário de Libras do INES](https://dicionario.ines.gov.br/) — Instituto
+Nacional de Educação de Surdos, vinculado ao Ministério da Educação. Os
+vídeos não são copiados para este repositório: o campo `videoUrl` de cada
+sinal aponta diretamente para o arquivo hospedado no site do INES, e é
+exibido na página de detalhes (componente
+[`SignVideo`](src/components/SignVideo.tsx)) com um crédito visível à fonte.
 
-1. Adicione o arquivo de imagem/GIF em `public/images/signs/`, usando o
-   mesmo nome referenciado no campo `image` de cada sinal (por exemplo,
-   `public/images/signs/ola.gif` para o sinal "Olá").
-2. Atualize os componentes `SignCard` e `SignDetails` para renderizar uma
-   tag `<img src={sign.image} alt={...} />` no lugar do componente
-   `SignPlaceholder`, mantendo o fallback para sinais sem imagem cadastrada.
+Nem toda palavra tem correspondência no acervo do INES. Quando um sinal não
+tem `videoUrl` definido (como "Bom dia" e "Boa noite", que o dicionário não
+lista como expressão composta), a interface usa a ilustração de categoria
+gerada em tela como alternativa, com o texto "Imagem demonstrativa".
+
+Para adicionar o vídeo de um novo sinal, procure a palavra no dicionário do
+INES, copie o endereço do arquivo `.mp4` reproduzido na página e use-o como
+`videoUrl` em `src/data/signs.ts`.
 
 ## Sobre o quiz
 
@@ -105,8 +116,11 @@ As perguntas do quiz nunca ficam fixas no código: a cada rodada, a função
 `generateQuizQuestions` (em [`src/utils/quizUtils.ts`](src/utils/quizUtils.ts))
 seleciona aleatoriamente 10 sinais da base de dados, monta 4 alternativas
 únicas para cada um (a palavra correta e três distratoras) e embaralha tanto
-a ordem das perguntas quanto das alternativas. Ao final, a pontuação é
-comparada a faixas percentuais para exibir uma mensagem de desempenho.
+a ordem das perguntas quanto das alternativas. Quando o sinal sorteado tem
+vídeo cadastrado, a pergunta mostra o vídeo do INES para o usuário assistir
+e adivinhar a palavra; caso contrário, mostra a descrição do movimento. Ao
+final, a pontuação é comparada a faixas percentuais para exibir uma
+mensagem de desempenho.
 
 ## Acessibilidade
 
@@ -125,3 +139,12 @@ comparada a faixas percentuais para exibir uma mensagem de desempenho.
 As descrições dos sinais têm fins didáticos e ilustrativos. Para o
 aprendizado formal da LIBRAS e suas variações regionais, recomenda-se
 sempre consultar dicionários oficiais e instrutores surdos qualificados.
+
+## Créditos
+
+Os vídeos de demonstração dos sinais pertencem ao
+[Dicionário de Libras do INES](https://dicionario.ines.gov.br/) (Instituto
+Nacional de Educação de Surdos), produzido com apoio da Presidência da
+República e do Ministério da Ciência, Tecnologia e Inovação. Este projeto
+apenas referencia os vídeos publicamente disponíveis no site oficial do
+INES; nenhum arquivo é copiado ou redistribuído neste repositório.
