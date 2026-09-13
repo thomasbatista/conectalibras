@@ -8,15 +8,15 @@ import type { Sign } from "../types/sign";
 // de Educação de Surdos), em dicionario.ines.gov.br. Nem toda palavra tem
 // correspondência exata nesse acervo — quando ausente, a interface usa a
 // ilustração de categoria como alternativa.
-const INES_VIDEOS = "https://dicionario.ines.gov.br/public/media/palavras/videos/";
+const INES_VIDEOS = "http://dicionario.ines.gov.br/public/media/palavras/videos/";
 
 export const signs: Sign[] = [
   {
     id: 1,
     word: "Olá",
     category: "Saudações",
-    image: "/images/signs/ola.gif",
-    videoUrl: `${INES_VIDEOS}olaSm_Prog001.mp4`,
+    image: "/images/signs/ola-demo.svg",
+    videoUrl: `${INES_VIDEOS}oiSm_Prog001.mp4`,
     description:
       "Mão aberta próxima à testa, com um leve movimento para frente, como uma continência descontraída.",
   },

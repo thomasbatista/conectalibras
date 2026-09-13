@@ -80,7 +80,7 @@ Para adicionar um novo, inclua um objeto seguindo a interface `Sign`
   word: "Exemplo",
   category: "Saudações",
   image: "/images/signs/exemplo.gif",
-  videoUrl: "https://dicionario.ines.gov.br/public/media/palavras/videos/exemploSm_Prog001.mp4",
+  videoUrl: "http://dicionario.ines.gov.br/public/media/palavras/videos/exemploSm_Prog001.mp4",
   description: "Descrição resumida do movimento do sinal.",
 }
 ```

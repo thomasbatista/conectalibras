@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import type { Sign } from "../types/sign";
-import SignPlaceholder from "./SignPlaceholder";
+import SignVideoPreview from "./SignVideoPreview";
 import FavoriteButton from "./FavoriteButton";
 
 interface SignCardProps {
@@ -16,7 +16,11 @@ export default function SignCard({
 }: SignCardProps) {
   return (
     <article className="flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md">
-      <SignPlaceholder word={sign.word} hasVideo={Boolean(sign.videoUrl)} />
+      <SignVideoPreview
+        word={sign.word}
+        videoUrl={sign.videoUrl}
+        category={sign.category}
+      />
       <div className="flex flex-1 flex-col gap-2 p-4">
         <span className="w-fit rounded-full bg-brand-50 px-2.5 py-0.5 text-xs font-medium text-brand-700">
           {sign.category}

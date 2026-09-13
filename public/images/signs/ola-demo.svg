@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" role="img" aria-labelledby="title desc">
+  <title id="title">Ilustração do sinal Olá</title>
+  <desc id="desc">Mão aberta próxima à testa, representando o sinal Olá em Libras.</desc>
+  <rect width="640" height="320" rx="24" fill="#e0f2fe"/>
+  <circle cx="320" cy="148" r="92" fill="#bae6fd"/>
+  <path d="M273 245c-20-20-27-48-19-77l20-73c4-14 24-13 25 2l3 42 7-76c1-16 24-16 25 0l3 76 7-91c1-16 24-15 25 1l2 91 9-70c2-15 24-13 25 2l3 80c1 35-13 65-39 85l-11 8H273Z" fill="#f8c99b" stroke="#9a5b34" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M315 245c21-18 38-40 48-66" fill="none" stroke="#d99062" stroke-width="6" stroke-linecap="round"/>
+  <path d="M259 93c-15-24-34-40-57-47M263 111c-25-13-49-17-73-12" fill="none" stroke="#2563eb" stroke-width="8" stroke-linecap="round"/>
+</svg>
