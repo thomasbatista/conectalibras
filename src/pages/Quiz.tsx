@@ -47,7 +47,12 @@ export default function Quiz() {
         Responda às perguntas e veja seu desempenho ao final.
       </p>
 
-      <div className="mt-6">
+      <div
+        className="mt-6"
+        aria-live="polite"
+        aria-atomic="true"
+        aria-label={`Pergunta ${currentIndex + 1} de ${questions.length}`}
+      >
         <ProgressBar current={currentIndex + 1} total={questions.length} />
       </div>
 

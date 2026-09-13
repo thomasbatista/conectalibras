@@ -54,19 +54,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-3">
+      <section
+        aria-labelledby="features-heading"
+        className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-3"
+      >
+        <h2 id="features-heading" className="sr-only">
+          Recursos da plataforma
+        </h2>
         {FEATURES.map((feature) => (
-          <div
+          <article
             key={feature.title}
             className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
           >
-            <h2 className="text-base font-semibold text-slate-900">
+            <h3 className="text-base font-semibold text-slate-900">
               {feature.title}
-            </h2>
+            </h3>
             <p className="mt-2 text-sm text-slate-600">
               {feature.description}
             </p>
-          </div>
+          </article>
         ))}
       </section>
     </div>

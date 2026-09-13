@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const NAV_LINKS = [
@@ -11,6 +11,17 @@ const NAV_LINKS = [
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setIsMenuOpen(false);
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   const linkClassName = ({ isActive }: { isActive: boolean }) =>
     `min-h-[44px] flex items-center rounded-lg px-3 text-sm font-medium transition ${
       isActive
@@ -21,7 +32,11 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-10 border-b border-slate-200 bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
-        <NavLink to="/" className="flex items-center gap-2 text-brand-700">
+        <NavLink
+          to="/"
+          className="flex items-center gap-2 text-brand-700"
+          aria-label="ConectaLibras - Página inicial"
+        >
           <svg
             viewBox="0 0 64 64"
             className="h-8 w-8"
@@ -57,7 +72,11 @@ export default function Header() {
           className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg border border-slate-200 sm:hidden"
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
-          aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+          aria-label={
+            isMenuOpen
+              ? "Fechar menu de navegação"
+              : "Abrir menu de navegação"
+          }
           onClick={() => setIsMenuOpen((open) => !open)}
         >
           <svg

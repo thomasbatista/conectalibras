@@ -55,9 +55,10 @@ export default function QuizQuestion({
               type="button"
               role="radio"
               aria-checked={isSelected}
+              aria-label={`Alternativa ${option}`}
               disabled={isAnswered}
               onClick={() => onSelectOption(option)}
-              className={`min-h-[48px] rounded-lg border px-4 py-2 text-left text-sm font-medium transition disabled:cursor-not-allowed ${optionClassName}`}
+              className={`min-h-[48px] rounded-lg border px-4 py-2 text-left text-sm font-medium transition focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed ${optionClassName}`}
             >
               {option}
             </button>
